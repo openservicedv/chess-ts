@@ -12,7 +12,7 @@ export const Cell: FC<ICell> = ({index, pos, piece}) => {
     // console.log(pos)
     return (
         <div className={`cell ${
-            Number(pos[1]) % 2 === 0 && index % 2 === 0 || Number(pos[1]) % 2 !== 0 && index % 2 !== 0
+            (Number(pos[1]) % 2 === 0 && index % 2 === 0) || (Number(pos[1]) % 2 !== 0 && index % 2 !== 0)
                 ? 'white' : 'black'}`}
         >
             <Piece
