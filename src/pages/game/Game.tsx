@@ -11,16 +11,31 @@ export const Game: FC<{}> = () => {
     const {current: chess} = useRef<Chess>(new Chess(fen));
     const [board, setBoard] = useState<ICell[]>(createBoard(fen))
 
+    const fromPos = useRef<string>('')
+
+    const makeMove = (pos: string) => {
+        console.log(pos, ' получили клетку Получатель')
+        chess.move({from: fromPos.current, to: pos})
+        setFen(chess.fen())
+    }
+
+    const setFromPos = (pos: string) => {
+        console.log(pos, ' получили клетку Отправитель')
+        fromPos.current = pos
+    }
+
     useEffect(() => {
         // console.log(board)
         // console.log(chess)
-        createBoard(fen)
+        // createBoard(fen)
     }, [fen]);
 
     return (
         <div className='container'>
             <Board
                 board={board}
+                makeMove={makeMove}
+                setFromPos={setFromPos}
             />
         </div>
     )
