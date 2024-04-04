@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import Game from "./pages/game";
+import {Game} from "./pages/game/Game";
 
-function App() {
+const App = () => {
     return (
         <div className="App">
-            <Game/>
+            <Game
+            />
         </div>
     );
 }

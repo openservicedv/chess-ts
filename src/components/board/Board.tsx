@@ -2,7 +2,7 @@ import {FC} from "react";
 import './board-styles.css'
 import {Cell, ICell} from "../cell/Cell";
 
-interface IBoard {
+export interface IBoard {
     board: ICell[]
 }
 export const Board: FC<IBoard> = ({board}) => {

@@ -18,6 +18,5 @@ export const createBoard = (fenString: string) => {
             board[i][j] = {pos: col[j] + row[i], piece: board[i][j]}
         }
     }
-    console.log(board.flat())
     return board.flat();
 };
