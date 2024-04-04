@@ -27,7 +27,7 @@ export const Game: FC<{}> = () => {
     useEffect(() => {
         // console.log(board)
         // console.log(chess)
-        // createBoard(fen)
+        setBoard(createBoard(fen))
     }, [fen]);
 
     return (
