@@ -9,12 +9,12 @@ export const Board: FC<IBoard> = ({board}) => {
     console.log(board)
     return (
         <div className='board'>
-            {board.map((el, index) => (
+            {board.map((cell, index) => (
                 <Cell
                     key={index}
                     index={index}
-                    pos={el.pos}
-                    piece={el.piece}
+                    pos={cell.pos}
+                    piece={cell.piece}
                 />
             ))}
         </div>

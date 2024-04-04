@@ -1,5 +1,6 @@
 import {FC} from "react";
 import './cell-styles.css';
+import {Piece} from "../piece/Piece";
 
 export interface ICell {
     index: number;
@@ -14,7 +15,9 @@ export const Cell: FC<ICell> = ({index, pos, piece}) => {
             Number(pos[1]) % 2 === 0 && index % 2 === 0 || Number(pos[1]) % 2 !== 0 && index % 2 !== 0
                 ? 'white' : 'black'}`}
         >
-           {piece}
+            <Piece
+                piece={piece}
+            />
         </div>
     );
 }
